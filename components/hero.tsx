@@ -26,13 +26,19 @@ export default function Hero() {
   }
 
   const handleDownloadCV = () => {
-    // Create a link element
-    const link = document.createElement("a")
-    link.href = "/edgar-mahlare-cv.pdf"
-    link.download = "Edgar-Mahlare-CV.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // Instead of downloading a file, navigate to the resume section
+    const resumeSection = document.getElementById("resume")
+    if (resumeSection) {
+      window.scrollTo({
+        top: resumeSection.offsetTop - 80,
+        behavior: "smooth",
+      })
+      // Toggle view mode in resume section if it's not already visible
+      const viewResumeButton = document.querySelector("#resume button:nth-child(2)") as HTMLButtonElement
+      if (viewResumeButton && viewResumeButton.textContent?.includes("View Resume")) {
+        viewResumeButton.click()
+      }
+    }
   }
 
   return (
@@ -102,7 +108,7 @@ export default function Hero() {
                 variant="outline"
                 className="hover-lift border-primary hover:bg-primary/10"
               >
-                <Download className="mr-2 h-4 w-4" /> Hire Me - My CV is here
+                <Download className="mr-2 h-4 w-4" /> View My Resume
               </Button>
             </motion.div>
 

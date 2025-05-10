@@ -3,21 +3,11 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Download, ExternalLink, FileText } from "lucide-react"
+import { ExternalLink, FileText } from "lucide-react"
 import SectionHeading from "./section-heading"
 
 export default function Resume() {
   const [isViewMode, setIsViewMode] = useState(false)
-
-  const handleDownload = () => {
-    // Create a link element
-    const link = document.createElement("a")
-    link.href = "/edgar-mahlare-cv.pdf" // Updated to the new CV file
-    link.download = "Edgar-Mahlare-CV.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
 
   const toggleViewMode = () => {
     setIsViewMode(!isViewMode)
@@ -33,8 +23,8 @@ export default function Resume() {
         />
 
         <div className="flex justify-center mb-8 space-x-4">
-          <Button onClick={handleDownload} className="gradient-bg text-white hover-lift">
-            <Download className="mr-2 h-4 w-4" /> Download Resume
+          <Button onClick={toggleViewMode} className="gradient-bg text-white hover-lift">
+            {isViewMode ? "Hide Resume" : "View Resume"}
           </Button>
           <Button
             variant="outline"
@@ -44,11 +34,11 @@ export default function Resume() {
             <ExternalLink className="mr-2 h-4 w-4" /> {isViewMode ? "Hide Resume" : "View Resume"}
           </Button>
           <Button
-            onClick={handleDownload}
+            onClick={toggleViewMode}
             variant="outline"
             className="hover-lift border-primary hover:bg-primary/10 hidden md:flex"
           >
-            <FileText className="mr-2 h-4 w-4" /> Hire Me - My CV is here
+            <FileText className="mr-2 h-4 w-4" /> View My Resume
           </Button>
         </div>
 
@@ -201,7 +191,7 @@ export default function Resume() {
 
             <div className="text-center mt-12">
               <div className="inline-block rounded-full w-16 h-16 bg-green-forest/30 flex items-center justify-center text-2xl font-bold text-green-mint">
-                EM
+                KEM
               </div>
             </div>
           </motion.div>

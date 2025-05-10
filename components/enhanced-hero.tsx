@@ -53,14 +53,20 @@ export default function EnhancedHero() {
     }
   }
 
-  const handleDownloadCV = () => {
-    // Create a link element
-    const link = document.createElement("a")
-    link.href = "/edgar-mahlare-cv.pdf"
-    link.download = "Kgope-Edgar-Mahlare-CV.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleViewResume = () => {
+    // Navigate to the resume section
+    const resumeSection = document.getElementById("resume")
+    if (resumeSection) {
+      window.scrollTo({
+        top: resumeSection.offsetTop - 80,
+        behavior: "smooth",
+      })
+      // Toggle view mode in resume section if it's not already visible
+      const viewResumeButton = document.querySelector("#resume button:nth-child(2)") as HTMLButtonElement
+      if (viewResumeButton && viewResumeButton.textContent?.includes("View Resume")) {
+        viewResumeButton.click()
+      }
+    }
   }
 
   // Calculate 3D rotation based on mouse position
@@ -186,15 +192,15 @@ export default function EnhancedHero() {
               </Button>
 
               <Button
-                onClick={handleDownloadCV}
+                onClick={handleViewResume}
                 size="lg"
                 variant="outline"
                 className="hover-lift border-primary hover:bg-primary/10 relative overflow-hidden group"
-                data-cursor-text="Download CV"
+                data-cursor-text="View Resume"
               >
                 <span className="relative z-10 flex items-center">
                   <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-                  Hire Me - My CV is here
+                  View My Resume
                 </span>
                 <motion.span
                   className="absolute inset-0 bg-primary/10"
