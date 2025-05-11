@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, FileText } from "lucide-react"
+import { Download, Printer } from "lucide-react"
 import SectionHeading from "./section-heading"
 
 export default function Resume() {
@@ -11,6 +11,27 @@ export default function Resume() {
 
   const toggleViewMode = () => {
     setIsViewMode(!isViewMode)
+  }
+
+  const handleDownloadCV = () => {
+    // Create a link element
+    const link = document.createElement("a")
+    link.href = "/edgar-mahlare-cv.html"
+    link.download = "Kgope-Edgar-Mahlare-CV.html"
+    link.target = "_blank" // Add this to ensure it opens in a new tab if download fails
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  const handlePrintCV = () => {
+    // Open the CV in a new window and print it
+    const printWindow = window.open("/edgar-mahlare-cv.html", "_blank")
+    if (printWindow) {
+      printWindow.onload = () => {
+        printWindow.print()
+      }
+    }
   }
 
   return (
@@ -22,23 +43,19 @@ export default function Resume() {
           description="Front-End UI Developer with expertise in creating responsive, user-centric web interfaces"
         />
 
-        <div className="flex justify-center mb-8 space-x-4">
+        <div className="flex flex-wrap justify-center mb-8 gap-4">
           <Button onClick={toggleViewMode} className="gradient-bg text-white hover-lift">
             {isViewMode ? "Hide Resume" : "View Resume"}
           </Button>
           <Button
+            onClick={handleDownloadCV}
             variant="outline"
-            onClick={toggleViewMode}
             className="border-green-forest hover:border-green-mint hover:text-green-mint"
           >
-            <ExternalLink className="mr-2 h-4 w-4" /> {isViewMode ? "Hide Resume" : "View Resume"}
+            <Download className="mr-2 h-4 w-4" /> Download CV
           </Button>
-          <Button
-            onClick={toggleViewMode}
-            variant="outline"
-            className="hover-lift border-primary hover:bg-primary/10 hidden md:flex"
-          >
-            <FileText className="mr-2 h-4 w-4" /> View My Resume
+          <Button onClick={handlePrintCV} variant="outline" className="hover-lift border-primary hover:bg-primary/10">
+            <Printer className="mr-2 h-4 w-4" /> Print CV
           </Button>
         </div>
 

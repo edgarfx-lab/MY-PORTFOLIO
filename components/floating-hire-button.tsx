@@ -22,20 +22,15 @@ export default function FloatingHireButton() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleViewResume = () => {
-    // Navigate to the resume section
-    const resumeSection = document.getElementById("resume")
-    if (resumeSection) {
-      window.scrollTo({
-        top: resumeSection.offsetTop - 80,
-        behavior: "smooth",
-      })
-      // Toggle view mode in resume section if it's not already visible
-      const viewResumeButton = document.querySelector("#resume button:nth-child(2)") as HTMLButtonElement
-      if (viewResumeButton && viewResumeButton.textContent?.includes("View Resume")) {
-        viewResumeButton.click()
-      }
-    }
+  const handleDownloadCV = () => {
+    // Create a link element
+    const link = document.createElement("a")
+    link.href = "/edgar-mahlare-cv.html"
+    link.download = "Kgope-Edgar-Mahlare-CV.html"
+    link.target = "_blank" // Add this to ensure it opens in a new tab if download fails
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   return (
@@ -48,8 +43,8 @@ export default function FloatingHireButton() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.2 }}
         >
-          <Button onClick={handleViewResume} className="gradient-bg text-white hover-lift shadow-lg" size="lg">
-            <Download className="mr-2 h-4 w-4" /> View My Resume
+          <Button onClick={handleDownloadCV} className="gradient-bg text-white hover-lift shadow-lg" size="lg">
+            <Download className="mr-2 h-4 w-4" /> Download My CV
           </Button>
         </motion.div>
       )}
