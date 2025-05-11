@@ -75,11 +75,19 @@ export default function SkillChart() {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
           <motion.div
-            className="relative w-[300px] h-[300px]"
+            className="relative w-[300px] h-[300px] overflow-visible"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring" }}
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 20,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
           >
             <svg width="300" height="300" viewBox="0 0 300 300">
               {/* Background grid */}
