@@ -13,6 +13,7 @@ import EnhancedCursor from "@/components/enhanced-cursor"
 import ScrollProgress from "@/components/scroll-progress"
 import EnhancedHero from "@/components/enhanced-hero"
 import SectionTransition from "@/components/section-transition"
+import Projects from "@/components/projects"
 
 export default function Home() {
   return (
@@ -35,6 +36,10 @@ export default function Home() {
 
       <SectionTransition delay={0.2}>
         <SkillChart />
+      </SectionTransition>
+
+      <SectionTransition delay={0.3}>
+        <Projects />
       </SectionTransition>
 
       <SectionTransition delay={0.1}>
