@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Kgope Edgar Mahlare | Front-End UI Developer",
   description:
     "Portfolio of Kgope Edgar Mahlare, a Front-End UI Developer specializing in responsive web design and user-centric interfaces.",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

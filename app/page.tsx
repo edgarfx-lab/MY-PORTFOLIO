@@ -1,64 +1,49 @@
+"use client"
+
+import { useEffect } from "react"
+import Hero from "@/components/hero"
 import About from "@/components/about"
-import Skills from "@/components/skills"
 import Experience from "@/components/experience"
-import Contact from "@/components/contact"
-import MobileAnimation from "@/components/mobile-animation"
-import Resume from "@/components/resume"
-import FloatingHireButton from "@/components/floating-hire-button"
-import TechStack from "@/components/tech-stack"
-import SkillChart from "@/components/skill-chart"
-import LoadingAnimation from "@/components/loading-animation"
-import EnhancedParticles from "@/components/enhanced-particles"
-import EnhancedCursor from "@/components/enhanced-cursor"
-import ScrollProgress from "@/components/scroll-progress"
-import EnhancedHero from "@/components/enhanced-hero"
-import SectionTransition from "@/components/section-transition"
 import Projects from "@/components/projects"
+import Testimonials from "@/components/testimonials"
+import Certifications from "@/components/certifications"
+import Contact from "@/components/contact"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import FloatingHireButton from "@/components/floating-hire-button"
+import ScrollProgress from "@/components/scroll-progress"
+import BackToTop from "@/components/back-to-top"
 
 export default function Home() {
+  useEffect(() => {
+    // Add smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = "smooth"
+
+    // Cleanup
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto"
+    }
+  }, [])
+
   return (
-    <>
-      <LoadingAnimation />
-      <EnhancedParticles />
-      <EnhancedCursor />
+    <main className="min-h-screen bg-background">
       <ScrollProgress />
-      <MobileAnimation />
+      <Navbar />
 
-      <EnhancedHero />
+      <div id="home">
+        <Hero />
+      </div>
 
-      <SectionTransition>
-        <About />
-      </SectionTransition>
+      <About />
+      <Experience />
+      <Projects />
+      <Testimonials />
+      <Certifications />
+      <Contact />
 
-      <SectionTransition delay={0.1}>
-        <Skills />
-      </SectionTransition>
-
-      <SectionTransition delay={0.2}>
-        <SkillChart />
-      </SectionTransition>
-
-      <SectionTransition delay={0.3}>
-        <Projects />
-      </SectionTransition>
-
-      <SectionTransition delay={0.1}>
-        <TechStack />
-      </SectionTransition>
-
-      <SectionTransition delay={0.2}>
-        <Experience />
-      </SectionTransition>
-
-      <SectionTransition delay={0.1}>
-        <Resume />
-      </SectionTransition>
-
-      <SectionTransition delay={0.2}>
-        <Contact />
-      </SectionTransition>
-
+      <Footer />
       <FloatingHireButton />
-    </>
+      <BackToTop />
+    </main>
   )
 }
