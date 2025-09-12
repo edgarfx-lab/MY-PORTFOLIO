@@ -38,9 +38,9 @@ export default function Experience() {
         "Accessibility",
         "Brand Strategy",
       ],
-      color: "from-emerald-100 to-emerald-200",
-      borderColor: "border-emerald-300",
-      iconColor: "text-emerald-600",
+      color: "from-forest-100 to-forest-200",
+      borderColor: "border-forest-300",
+      iconColor: "text-forest-600",
     },
     {
       title: "Graphic Designer & Brand Manager",
@@ -66,9 +66,9 @@ export default function Experience() {
         "Digital Marketing",
         "Customer Journey Mapping",
       ],
-      color: "from-navy-100 to-navy-200",
-      borderColor: "border-navy-300",
-      iconColor: "text-navy-600",
+      color: "from-earth-100 to-earth-200",
+      borderColor: "border-earth-300",
+      iconColor: "text-earth-600",
     },
   ]
 
@@ -83,7 +83,7 @@ export default function Experience() {
       metrics: ["89% task completion improvement", "45% reduction in user errors", "60% faster transaction flows"],
       link: "https://v0-nedbank-mobile-banking-redesign.vercel.app/dashboard",
       skills: ["User Research", "Prototyping", "Usability Testing", "Journey Mapping", "Accessibility Design"],
-      color: "from-teal-100 to-teal-200",
+      color: "from-ocean-100 to-ocean-200",
       category: "FinTech",
     },
     {
@@ -101,7 +101,7 @@ export default function Experience() {
         "Conversion Optimization",
         "Form Design",
       ],
-      color: "from-coral-100 to-coral-200",
+      color: "from-sunset-100 to-sunset-200",
       category: "FinTech",
     },
     {
@@ -123,21 +123,21 @@ export default function Experience() {
         "Conversion Optimization",
         "User Behavior Analysis",
       ],
-      color: "from-violet-100 to-violet-200",
+      color: "from-sage-100 to-sage-200",
       category: "E-commerce",
     },
   ]
 
   const competencyLevels = [
-    { skill: "Creative Problem Solving", level: 95, color: "from-coral-400 to-coral-600" },
-    { skill: "User Empathy", level: 92, color: "from-emerald-400 to-emerald-600" },
-    { skill: "Strategic Thinking", level: 88, color: "from-navy-400 to-navy-600" },
-    { skill: "Team Collaboration", level: 90, color: "from-teal-400 to-teal-600" },
-    { skill: "Design Leadership", level: 85, color: "from-violet-400 to-violet-600" },
+    { skill: "Creative Problem Solving", level: 95, color: "from-sunset-400 to-sunset-600" },
+    { skill: "User Empathy", level: 92, color: "from-forest-400 to-forest-600" },
+    { skill: "Strategic Thinking", level: 88, color: "from-ocean-400 to-ocean-600" },
+    { skill: "Team Collaboration", level: 90, color: "from-earth-400 to-earth-600" },
+    { skill: "Design Leadership", level: 85, color: "from-sage-400 to-sage-600" },
   ]
 
   return (
-    <section ref={ref} id="experience" className="section-padding section-bg-secondary relative overflow-hidden">
+    <section ref={ref} id="experience" className="section-padding section-bg-sage relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pattern-grid opacity-20"></div>
 
@@ -149,14 +149,14 @@ export default function Experience() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <Badge className="glass-navy px-6 py-3 text-navy-800 border-navy-300/50 mb-6 text-sm font-semibold">
+          <Badge className="glass-sage px-6 py-3 text-sage-800 border-sage-300/50 mb-6 text-sm font-semibold">
             Professional Experience
           </Badge>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-primary mb-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-earth mb-8">
             My Professional Journey
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-navy-400 via-teal-400 to-coral-400 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed font-medium">
+          <div className="w-32 h-1.5 bg-gradient-to-r from-sage-400 via-earth-400 to-ocean-400 mx-auto mb-8 rounded-full"></div>
+          <p className="text-xl sm:text-2xl text-sage-700 max-w-4xl mx-auto leading-relaxed font-medium">
             From brand strategy to specialized UI/UX design, creating impactful digital solutions that drive measurable
             results
           </p>
@@ -170,10 +170,10 @@ export default function Experience() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-4 mb-16"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-navy-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-earth-500 to-sage-600 rounded-2xl flex items-center justify-center shadow-lg">
               <Briefcase className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900">Work Experience</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-sage-900">Work Experience</h3>
           </motion.div>
 
           <div className="space-y-12">
@@ -187,7 +187,7 @@ export default function Experience() {
               >
                 {/* Timeline Line */}
                 {index < workExperience.length - 1 && (
-                  <div className="absolute left-8 top-24 w-0.5 h-40 bg-gradient-to-b from-navy-300 to-teal-300 hidden lg:block"></div>
+                  <div className="absolute left-8 top-24 w-0.5 h-40 bg-gradient-to-b from-sage-300 to-earth-300 hidden lg:block"></div>
                 )}
 
                 {/* Timeline Dot */}
@@ -205,41 +205,41 @@ export default function Experience() {
                           <Badge
                             className={
                               job.status === "Current"
-                                ? "bg-emerald-100 text-emerald-800 border-emerald-300 px-4 py-2"
-                                : "bg-slate-100 text-slate-800 border-slate-300 px-4 py-2"
+                                ? "bg-forest-100 text-forest-800 border-forest-300 px-4 py-2"
+                                : "bg-sage-100 text-sage-800 border-sage-300 px-4 py-2"
                             }
                           >
                             <div
-                              className={`w-2 h-2 ${job.status === "Current" ? "bg-emerald-500" : "bg-slate-500"} rounded-full mr-2 ${job.status === "Current" ? "animate-pulse" : ""}`}
+                              className={`w-2 h-2 ${job.status === "Current" ? "bg-forest-500" : "bg-sage-500"} rounded-full mr-2 ${job.status === "Current" ? "animate-pulse" : ""}`}
                             ></div>
                             {job.status}
                           </Badge>
-                          <Badge className="bg-white/80 text-slate-700 border-slate-300 px-3 py-1 text-xs font-medium">
+                          <Badge className="bg-white/80 text-sage-700 border-sage-300 px-3 py-1 text-xs font-medium">
                             {job.type}
                           </Badge>
                         </div>
 
-                        <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">{job.title}</h4>
-                        <p className="text-xl sm:text-2xl font-bold text-gradient-primary mb-6">{job.company}</p>
+                        <h4 className="text-2xl sm:text-3xl font-bold text-sage-900 mb-3">{job.title}</h4>
+                        <p className="text-xl sm:text-2xl font-bold text-gradient-earth mb-6">{job.company}</p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 text-slate-600 mb-8">
+                        <div className="flex flex-col sm:flex-row gap-4 text-sage-600 mb-8">
                           <div className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5 text-navy-600" />
+                            <Calendar className="w-5 h-5 text-earth-600" />
                             <span className="font-medium">{job.period}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <MapPin className="w-5 h-5 text-navy-600" />
+                            <MapPin className="w-5 h-5 text-earth-600" />
                             <span className="font-medium">{job.location}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-slate-700 mb-8 leading-relaxed text-lg">{job.description}</p>
+                    <p className="text-sage-700 mb-8 leading-relaxed text-lg">{job.description}</p>
 
                     <div className="mb-8">
-                      <h5 className="font-bold text-slate-900 mb-4 flex items-center gap-2 text-lg">
-                        <TrendingUp className="w-5 h-5 text-navy-600" />
+                      <h5 className="font-bold text-sage-900 mb-4 flex items-center gap-2 text-lg">
+                        <TrendingUp className="w-5 h-5 text-earth-600" />
                         Key Achievements:
                       </h5>
                       <ul className="space-y-3">
@@ -251,8 +251,8 @@ export default function Experience() {
                             transition={{ duration: 0.4, delay: 0.5 + index * 0.2 + achIndex * 0.1 }}
                             className="flex items-start gap-3 group"
                           >
-                            <div className="w-2 h-2 bg-gradient-to-r from-navy-500 to-teal-500 rounded-full mt-3 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                            <span className="text-slate-700 leading-relaxed group-hover:text-slate-900 transition-colors">
+                            <div className="w-2 h-2 bg-gradient-to-r from-earth-500 to-sage-500 rounded-full mt-3 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                            <span className="text-sage-700 leading-relaxed group-hover:text-sage-900 transition-colors">
                               {achievement}
                             </span>
                           </motion.li>
@@ -261,7 +261,7 @@ export default function Experience() {
                     </div>
 
                     <div>
-                      <h5 className="font-bold text-slate-900 mb-4 text-lg">Skills & Technologies:</h5>
+                      <h5 className="font-bold text-sage-900 mb-4 text-lg">Skills & Technologies:</h5>
                       <div className="flex flex-wrap gap-3">
                         {job.skills.map((skill, skillIndex) => (
                           <motion.div
@@ -271,7 +271,7 @@ export default function Experience() {
                             transition={{ duration: 0.3, delay: 0.6 + index * 0.2 + skillIndex * 0.05 }}
                             whileHover={{ scale: 1.05 }}
                           >
-                            <Badge className="bg-white/90 text-slate-800 border-slate-200 px-3 py-1.5 font-medium hover:bg-slate-50 transition-colors">
+                            <Badge className="bg-white/90 text-sage-800 border-sage-200 px-3 py-1.5 font-medium hover:bg-sage-50 transition-colors">
                               {skill}
                             </Badge>
                           </motion.div>
@@ -293,10 +293,10 @@ export default function Experience() {
           className="mb-24"
         >
           <div className="flex items-center gap-4 mb-16">
-            <div className="w-12 h-12 bg-gradient-to-br from-coral-500 to-violet-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-ocean-500 to-earth-600 rounded-2xl flex items-center justify-center shadow-lg">
               <Award className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900">Featured Case Studies</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-sage-900">Featured Case Studies</h3>
           </div>
 
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -310,15 +310,15 @@ export default function Experience() {
                 className="group"
               >
                 <Card
-                  className={`card-premium card-hover h-full bg-gradient-to-br ${study.color}/30 border-2 border-slate-200/50`}
+                  className={`card-premium card-hover h-full bg-gradient-to-br ${study.color}/30 border-2 border-sage-200/50`}
                 >
                   <CardContent className="p-8">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex-1">
-                        <Badge className="bg-white/90 text-slate-700 border-slate-300 px-3 py-1 text-xs font-medium mb-3">
+                        <Badge className="bg-white/90 text-sage-700 border-sage-300 px-3 py-1 text-xs font-medium mb-3">
                           {study.category}
                         </Badge>
-                        <h4 className="text-xl font-bold text-slate-900 group-hover:text-navy-700 transition-colors leading-tight">
+                        <h4 className="text-xl font-bold text-sage-900 group-hover:text-earth-700 transition-colors leading-tight">
                           {study.title}
                         </h4>
                       </div>
@@ -327,7 +327,7 @@ export default function Experience() {
                           asChild
                           variant="ghost"
                           size="sm"
-                          className="text-slate-600 hover:text-navy-700 hover:bg-slate-100/50 p-2"
+                          className="text-sage-600 hover:text-earth-700 hover:bg-sage-100/50 p-2"
                         >
                           <a href={study.link} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="w-4 h-4" />
@@ -336,27 +336,27 @@ export default function Experience() {
                       )}
                     </div>
 
-                    <p className="text-slate-700 mb-4 leading-relaxed">{study.description}</p>
-                    <p className="text-slate-600 mb-6 leading-relaxed text-sm">{study.process}</p>
+                    <p className="text-sage-700 mb-4 leading-relaxed">{study.description}</p>
+                    <p className="text-sage-600 mb-6 leading-relaxed text-sm">{study.process}</p>
 
                     {study.impact && (
-                      <div className="mb-6 p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200/50">
+                      <div className="mb-6 p-4 bg-gradient-to-r from-forest-50 to-earth-50 rounded-xl border border-forest-200/50">
                         <div className="flex items-center gap-2 mb-2">
-                          <Target className="w-4 h-4 text-emerald-600" />
-                          <span className="text-sm font-bold text-emerald-800">Primary Impact</span>
+                          <Target className="w-4 h-4 text-forest-600" />
+                          <span className="text-sm font-bold text-forest-800">Primary Impact</span>
                         </div>
-                        <div className="text-lg font-bold text-emerald-700">{study.impact}</div>
+                        <div className="text-lg font-bold text-forest-700">{study.impact}</div>
                       </div>
                     )}
 
                     {study.metrics && (
                       <div className="mb-6">
-                        <h6 className="text-sm font-bold text-slate-900 mb-3">Key Metrics:</h6>
+                        <h6 className="text-sm font-bold text-sage-900 mb-3">Key Metrics:</h6>
                         <div className="space-y-2">
                           {study.metrics.map((metric, metricIndex) => (
                             <div key={metricIndex} className="flex items-center gap-2">
-                              <Star className="w-3 h-3 text-coral-500" />
-                              <span className="text-xs text-slate-700 font-medium">{metric}</span>
+                              <Star className="w-3 h-3 text-sunset-500" />
+                              <span className="text-xs text-sage-700 font-medium">{metric}</span>
                             </div>
                           ))}
                         </div>
@@ -368,7 +368,7 @@ export default function Experience() {
                         <Badge
                           key={skillIndex}
                           variant="outline"
-                          className="text-xs border-slate-300 text-slate-700 bg-white/50"
+                          className="text-xs border-sage-300 text-sage-700 bg-white/50"
                         >
                           {skill}
                         </Badge>
@@ -387,16 +387,16 @@ export default function Experience() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <Card className="card-premium bg-gradient-to-br from-slate-800 via-navy-700 to-slate-900 text-white border-0 shadow-2xl">
+          <Card className="card-premium bg-gradient-to-br from-sage-800 via-earth-700 to-sage-900 text-white border-0 shadow-2xl">
             <CardContent className="p-10 sm:p-16">
               <div className="text-center mb-16">
                 <div className="flex items-center justify-center gap-4 mb-6">
                   <div className="w-16 h-16 bg-white/20 rounded-3xl flex items-center justify-center backdrop-blur-sm">
-                    <Users className="w-8 h-8 text-slate-200" />
+                    <Users className="w-8 h-8 text-sage-200" />
                   </div>
                   <h3 className="text-3xl sm:text-4xl font-bold">Core Competencies</h3>
                 </div>
-                <p className="text-slate-100 text-xl max-w-4xl mx-auto leading-relaxed">
+                <p className="text-sage-100 text-xl max-w-4xl mx-auto leading-relaxed">
                   Essential skills that drive successful design outcomes, foster innovation, and enable effective
                   leadership in complex projects
                 </p>
@@ -412,10 +412,10 @@ export default function Experience() {
                     className="text-center group"
                   >
                     <div className="mb-6">
-                      <div className="text-lg font-bold mb-3 group-hover:text-slate-200 transition-colors">
+                      <div className="text-lg font-bold mb-3 group-hover:text-sage-200 transition-colors">
                         {competency.skill}
                       </div>
-                      <div className="text-4xl font-bold text-slate-200 mb-4 group-hover:scale-110 transition-transform">
+                      <div className="text-4xl font-bold text-sage-200 mb-4 group-hover:scale-110 transition-transform">
                         {competency.level}%
                       </div>
                     </div>
@@ -439,7 +439,7 @@ export default function Experience() {
                 transition={{ delay: 1.8, duration: 0.8 }}
                 className="mt-16 text-center"
               >
-                <p className="text-slate-100 text-lg max-w-3xl mx-auto leading-relaxed">
+                <p className="text-sage-100 text-lg max-w-3xl mx-auto leading-relaxed">
                   These competencies, refined through diverse project experiences and continuous learning, enable me to
                   deliver exceptional design solutions while building strong relationships with clients and team members
                   worldwide.

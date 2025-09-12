@@ -15,7 +15,7 @@ import {
   Palette,
   Brain,
   Eye,
-  Compass,
+  Rocket,
 } from "lucide-react"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
@@ -30,28 +30,32 @@ export default function About() {
       value: "2+",
       icon: User,
       description: "Professional design journey",
-      color: "from-navy-100 to-navy-200 text-navy-800",
+      color: "from-midnight-100 to-midnight-200 text-midnight-800",
+      glowColor: "glow-midnight",
     },
     {
       label: "Projects Completed",
       value: "15+",
       icon: Target,
       description: "Successful client outcomes",
-      color: "from-teal-100 to-teal-200 text-teal-800",
+      color: "from-coral-100 to-coral-200 text-coral-800",
+      glowColor: "glow-coral",
     },
     {
       label: "Certifications",
       value: "3",
       icon: Award,
       description: "Professional credentials",
-      color: "from-emerald-100 to-emerald-200 text-emerald-800",
+      color: "from-sage-100 to-sage-200 text-sage-800",
+      glowColor: "glow-sage",
     },
     {
       label: "Client Satisfaction",
       value: "100%",
       icon: TrendingUp,
       description: "Happy clients & results",
-      color: "from-coral-100 to-coral-200 text-coral-800",
+      color: "from-golden-100 to-golden-200 text-golden-800",
+      glowColor: "glow-golden",
     },
   ]
 
@@ -60,55 +64,57 @@ export default function About() {
       icon: Heart,
       title: "Human-Centered Design",
       description:
-        "Every design decision starts with deep empathy for users. I believe in creating experiences that genuinely solve problems and improve lives through thoughtful, accessible design.",
+        "Every design decision starts with deep empathy for users. I believe in creating experiences that genuinely solve problems and improve lives through thoughtful, accessible design that puts people first.",
       color: "from-coral-50 to-coral-100",
       iconColor: "text-coral-600",
       borderColor: "border-coral-200",
     },
     {
       icon: Brain,
-      title: "Strategic Thinking",
+      title: "Strategic Innovation",
       description:
-        "Design isn't just about aesthetics—it's about solving complex problems. I approach each project with strategic thinking, balancing user needs with business objectives.",
-      color: "from-navy-50 to-navy-100",
-      iconColor: "text-navy-600",
-      borderColor: "border-navy-200",
+        "Design isn't just about aesthetics—it's about solving complex problems strategically. I approach each project with analytical thinking, balancing user needs with business objectives and market realities.",
+      color: "from-midnight-50 to-midnight-100",
+      iconColor: "text-midnight-600",
+      borderColor: "border-midnight-200",
     },
     {
       icon: Eye,
-      title: "Attention to Detail",
+      title: "Obsessive Attention to Detail",
       description:
-        "The magic is in the details. From micro-interactions to color psychology, I obsess over every element to create cohesive, polished experiences.",
-      color: "from-teal-50 to-teal-100",
-      iconColor: "text-teal-600",
-      borderColor: "border-teal-200",
+        "The magic lives in the details. From micro-interactions to color psychology, typography to spacing, I obsess over every element to create cohesive, polished experiences that feel effortless.",
+      color: "from-sage-50 to-sage-100",
+      iconColor: "text-sage-600",
+      borderColor: "border-sage-200",
     },
     {
-      icon: Compass,
+      icon: Rocket,
       title: "Continuous Innovation",
       description:
-        "The design landscape evolves rapidly. I stay ahead by embracing new tools, methodologies, and trends while maintaining timeless design principles.",
-      color: "from-violet-50 to-violet-100",
-      iconColor: "text-violet-600",
-      borderColor: "border-violet-200",
+        "The design landscape evolves rapidly. I stay ahead by embracing emerging technologies, new methodologies, and design trends while maintaining timeless principles that ensure longevity.",
+      color: "from-golden-50 to-golden-100",
+      iconColor: "text-golden-600",
+      borderColor: "border-golden-200",
     },
   ]
 
   const skillCategories = {
     design: {
-      title: "Design Expertise",
+      title: "Design Mastery",
       icon: Palette,
-      skills: ["UI/UX Design", "Figma Mastery", "Wireframing", "Prototyping", "Design Systems", "Visual Design"],
-      color: "from-navy-500 to-teal-600",
+      skills: ["UI/UX Design", "Figma Expert", "Wireframing", "Prototyping", "Design Systems", "Visual Design"],
+      color: "from-midnight-600 to-midnight-700",
+      bgColor: "from-midnight-50 to-midnight-100",
     },
     research: {
       title: "Research & Strategy",
       icon: Lightbulb,
       skills: ["User Research", "Usability Testing", "User Flows", "Personas", "Journey Mapping", "A/B Testing"],
-      color: "from-coral-500 to-amber-600",
+      color: "from-coral-600 to-coral-700",
+      bgColor: "from-coral-50 to-coral-100",
     },
     collaboration: {
-      title: "Collaboration & Leadership",
+      title: "Leadership & Collaboration",
       icon: Users,
       skills: [
         "Creative Leadership",
@@ -118,60 +124,63 @@ export default function About() {
         "Agile Methodology",
         "Stakeholder Management",
       ],
-      color: "from-violet-500 to-navy-600",
+      color: "from-sage-600 to-sage-700",
+      bgColor: "from-sage-50 to-sage-100",
     },
   }
 
   return (
-    <section ref={ref} id="about" className="section-padding section-bg-primary relative overflow-hidden">
+    <section ref={ref} id="about" className="section-padding section-bg-midnight relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 pattern-dots opacity-40"></div>
+      <div className="absolute inset-0 pattern-dots opacity-30"></div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 1 }}
+          className="text-center mb-24"
         >
-          <Badge className="glass-navy px-6 py-3 text-navy-800 border-navy-300/50 mb-6 text-sm font-semibold">
+          <Badge className="glass-midnight px-8 py-4 text-midnight-800 border-midnight-300/50 mb-8 text-base font-bold">
             About Me
           </Badge>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-primary mb-8">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gradient-midnight mb-10">
             Crafting Digital Experiences
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-navy-400 via-teal-400 to-coral-400 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed font-medium">
-            From brand strategy to user experience design, I create meaningful digital solutions that bridge business
-            goals with human needs
+          <div className="w-40 h-2 bg-gradient-to-r from-midnight-400 via-coral-400 to-sage-400 mx-auto mb-10 rounded-full"></div>
+          <p className="text-2xl sm:text-3xl text-midnight-700 max-w-5xl mx-auto leading-relaxed font-medium">
+            From strategic brand thinking to exceptional user experience design, I create meaningful digital solutions
+            that bridge business goals with human needs
           </p>
         </motion.div>
 
         {/* Stats Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-28"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -8 }}
+              transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
+              whileHover={{ scale: 1.08, y: -10 }}
               className="group"
             >
-              <Card className={`card-premium card-hover bg-gradient-to-br ${stat.color} border-2`}>
-                <CardContent className="p-6 sm:p-8 text-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/80 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-white transition-colors shadow-lg">
-                    <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 text-current" />
+              <Card
+                className={`card-premium card-hover bg-gradient-to-br ${stat.color} border-2 ${stat.glowColor} hover:${stat.glowColor}`}
+              >
+                <CardContent className="p-8 sm:p-10 text-center">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/90 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-white transition-colors shadow-xl group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-10 h-10 sm:w-12 sm:h-12 text-current" />
                   </div>
-                  <div className="text-3xl sm:text-4xl font-bold mb-3">{stat.value}</div>
-                  <div className="text-base sm:text-lg font-semibold mb-2">{stat.label}</div>
-                  <div className="text-sm opacity-80">{stat.description}</div>
+                  <div className="text-4xl sm:text-5xl font-bold mb-4">{stat.value}</div>
+                  <div className="text-lg sm:text-xl font-bold mb-3">{stat.label}</div>
+                  <div className="text-sm opacity-80 font-medium">{stat.description}</div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -179,53 +188,53 @@ export default function About() {
         </motion.div>
 
         {/* Story Section */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-24 items-center mb-28">
           {/* Story Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8"
+            initial={{ opacity: 0, x: -60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="space-y-10"
           >
-            <div className="space-y-6">
-              <h3 className="text-3xl sm:text-4xl font-bold text-slate-900">My Design Journey</h3>
-              <div className="w-20 h-1.5 bg-gradient-to-r from-navy-500 to-teal-500 rounded-full"></div>
+            <div className="space-y-8">
+              <h3 className="text-4xl sm:text-5xl font-bold text-midnight-900">My Design Journey</h3>
+              <div className="w-24 h-2 bg-gradient-to-r from-coral-500 to-sage-500 rounded-full"></div>
             </div>
 
-            <div className="space-y-6 text-slate-700 leading-relaxed">
-              <p className="text-lg sm:text-xl">
+            <div className="space-y-8 text-midnight-700 leading-relaxed">
+              <p className="text-xl sm:text-2xl">
                 My journey began as a{" "}
-                <strong className="text-navy-700">Graphic Designer & Brand Manager at JAYDEE X</strong> (2023-2024),
-                where I discovered the profound impact of user-centered design. I transformed brand websites through
-                strategic layout optimization and intuitive navigation, applying UX principles to create meaningful
-                connections between brands and their audiences.
+                <strong className="text-gradient-coral">Graphic Designer & Brand Manager at JAYDEE X</strong>{" "}
+                (2023-2024), where I discovered the transformative power of user-centered design. I revolutionized brand
+                websites through strategic layout optimization and intuitive navigation, applying UX principles to
+                create meaningful connections between brands and their audiences.
               </p>
 
-              <p className="text-lg sm:text-xl">
-                Now as a <strong className="text-navy-700">freelance UI/UX Designer</strong> (2025-Present), I
-                specialize in creating digital products that solve real problems. From responsive e-commerce platforms
-                to complex financial interfaces, I prioritize accessibility, usability, and aesthetic excellence in
-                every project.
+              <p className="text-xl sm:text-2xl">
+                Now as a <strong className="text-gradient-midnight">freelance UI/UX Designer</strong> (2025-Present), I
+                specialize in creating digital products that solve real-world problems. From responsive e-commerce
+                platforms to complex financial interfaces, I prioritize accessibility, usability, and aesthetic
+                excellence in every project I undertake.
               </p>
 
-              <p className="text-lg sm:text-xl">
-                My unique background in brand management provides a strategic lens that many designers lack. I
+              <p className="text-xl sm:text-2xl">
+                My unique background in brand management provides a strategic perspective that many designers lack. I
                 understand how design systems and user experiences can amplify business objectives while creating
-                delightful, memorable interactions that users love.
+                delightful, memorable interactions that users genuinely love and remember.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               {["Brand Strategy", "UX Research", "Design Systems", "Accessibility", "User Psychology"].map(
                 (skill, index) => (
                   <motion.div
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    whileHover={{ scale: 1.08 }}
                   >
-                    <Badge className="bg-navy-100 text-navy-800 px-4 py-2 text-sm font-semibold border border-navy-200">
+                    <Badge className="bg-midnight-100 text-midnight-800 px-5 py-3 text-base font-bold border border-midnight-200 hover:bg-midnight-200 transition-colors">
                       {skill}
                     </Badge>
                   </motion.div>
@@ -236,26 +245,26 @@ export default function About() {
 
           {/* Philosophy Card */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+            transition={{ duration: 1, delay: 0.6 }}
             className="relative"
           >
-            <Card className="card-premium bg-gradient-to-br from-teal-50 to-navy-50 border-2 border-teal-200/50 shadow-2xl">
-              <CardContent className="p-8 sm:p-12">
-                <div className="text-center mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-navy-500 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                    <Zap className="w-10 h-10 text-white" />
+            <Card className="card-premium bg-gradient-to-br from-sage-50 to-midnight-50 border-2 border-sage-200/60 shadow-2xl glow-sage">
+              <CardContent className="p-10 sm:p-14">
+                <div className="text-center mb-10">
+                  <div className="w-24 h-24 bg-gradient-to-br from-coral-500 to-sage-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
+                    <Zap className="w-12 h-12 text-white" />
                   </div>
-                  <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Design Philosophy</h4>
+                  <h4 className="text-3xl sm:text-4xl font-bold text-midnight-900 mb-6">Design Philosophy</h4>
                 </div>
 
-                <blockquote className="text-slate-700 text-lg sm:text-xl italic text-center leading-relaxed mb-8 font-medium">
+                <blockquote className="text-midnight-700 text-xl sm:text-2xl italic text-center leading-relaxed mb-10 font-medium">
                   "Exceptional design is invisible—it solves problems so elegantly that users don't notice the
-                  complexity behind the simplicity. It's the perfect marriage of form and function."
+                  complexity behind the simplicity. It's the perfect harmony of form, function, and human emotion."
                 </blockquote>
 
-                <div className="grid grid-cols-3 gap-6 text-center">
+                <div className="grid grid-cols-3 gap-8 text-center">
                   {[
                     { emoji: "🔍", label: "Research", desc: "Deep user insights" },
                     { emoji: "🎨", label: "Design", desc: "Creative solutions" },
@@ -263,17 +272,17 @@ export default function About() {
                   ].map((item, index) => (
                     <motion.div
                       key={item.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      className="space-y-3"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                      whileHover={{ scale: 1.08, y: -8 }}
+                      className="space-y-4"
                     >
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-md">
-                        <span className="text-2xl">{item.emoji}</span>
+                      <div className="w-16 h-16 bg-white rounded-3xl flex items-center justify-center mx-auto shadow-lg">
+                        <span className="text-3xl">{item.emoji}</span>
                       </div>
-                      <div className="text-base font-bold text-slate-900">{item.label}</div>
-                      <div className="text-sm text-slate-600">{item.desc}</div>
+                      <div className="text-lg font-bold text-midnight-900">{item.label}</div>
+                      <div className="text-sm text-midnight-600 font-medium">{item.desc}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -284,37 +293,37 @@ export default function About() {
 
         {/* Design Principles */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-24"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mb-28"
         >
-          <div className="text-center mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Core Design Principles</h3>
-            <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-              The fundamental beliefs that guide every design decision and creative solution
+          <div className="text-center mb-20">
+            <h3 className="text-4xl sm:text-5xl font-bold text-midnight-900 mb-8">Core Design Principles</h3>
+            <p className="text-xl sm:text-2xl text-midnight-700 max-w-4xl mx-auto">
+              The fundamental beliefs that guide every design decision and creative solution I develop
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {designPrinciples.map((principle, index) => (
               <motion.div
                 key={principle.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                whileHover={{ scale: 1.03, y: -8 }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 0.8, delay: 0.9 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -10 }}
                 className="group"
               >
                 <Card
                   className={`card-premium card-hover bg-gradient-to-br ${principle.color} border-2 ${principle.borderColor} h-full`}
                 >
-                  <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 bg-white/90 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                      <principle.icon className={`w-10 h-10 ${principle.iconColor}`} />
+                  <CardContent className="p-8 sm:p-10 text-center">
+                    <div className="w-24 h-24 bg-white/95 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-115 transition-transform shadow-xl">
+                      <principle.icon className={`w-12 h-12 ${principle.iconColor}`} />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-4">{principle.title}</h4>
-                    <p className="text-slate-700 leading-relaxed text-sm">{principle.description}</p>
+                    <h4 className="text-xl sm:text-2xl font-bold text-midnight-900 mb-6">{principle.title}</h4>
+                    <p className="text-midnight-700 leading-relaxed text-base">{principle.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -324,47 +333,49 @@ export default function About() {
 
         {/* Skills Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 1, delay: 1.0 }}
         >
-          <div className="text-center mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Skills & Expertise</h3>
-            <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-              A comprehensive toolkit for creating exceptional digital experiences that drive results
+          <div className="text-center mb-20">
+            <h3 className="text-4xl sm:text-5xl font-bold text-midnight-900 mb-8">Skills & Expertise</h3>
+            <p className="text-xl sm:text-2xl text-midnight-700 max-w-4xl mx-auto">
+              A comprehensive toolkit for creating exceptional digital experiences that drive measurable results
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-10">
             {Object.entries(skillCategories).map(([key, category], categoryIndex) => (
               <motion.div
                 key={key}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 1.1 + categoryIndex * 0.1 }}
-                whileHover={{ scale: 1.02, y: -5 }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 0.8, delay: 1.1 + categoryIndex * 0.1 }}
+                whileHover={{ scale: 1.03, y: -8 }}
               >
-                <Card className="card-premium h-full border-2 border-slate-200/50">
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-4 mb-8">
+                <Card
+                  className={`card-premium h-full border-2 border-midnight-200/60 bg-gradient-to-br ${category.bgColor}`}
+                >
+                  <CardContent className="p-10">
+                    <div className="flex items-center gap-5 mb-10">
                       <div
-                        className={`w-14 h-14 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                        className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center shadow-xl`}
                       >
-                        <category.icon className="w-7 h-7 text-white" />
+                        <category.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="text-xl font-bold text-slate-900">{category.title}</h4>
+                      <h4 className="text-2xl font-bold text-midnight-900">{category.title}</h4>
                     </div>
-                    <div className="space-y-4">
+                    <div className="space-y-5">
                       {category.skills.map((skill, skillIndex) => (
                         <motion.div
                           key={skill}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                          transition={{ duration: 0.4, delay: 1.2 + categoryIndex * 0.1 + skillIndex * 0.05 }}
-                          className="flex items-center gap-3 group"
+                          initial={{ opacity: 0, x: -30 }}
+                          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                          transition={{ duration: 0.5, delay: 1.2 + categoryIndex * 0.1 + skillIndex * 0.05 }}
+                          className="flex items-center gap-4 group"
                         >
-                          <div className="w-2 h-2 bg-gradient-to-r from-navy-500 to-teal-500 rounded-full group-hover:scale-125 transition-transform"></div>
-                          <span className="text-slate-700 font-medium group-hover:text-slate-900 transition-colors">
+                          <div className="w-3 h-3 bg-gradient-to-r from-coral-500 to-sage-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                          <span className="text-midnight-700 font-semibold text-lg group-hover:text-midnight-900 transition-colors">
                             {skill}
                           </span>
                         </motion.div>

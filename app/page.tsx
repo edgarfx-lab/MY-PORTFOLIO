@@ -1,44 +1,34 @@
-"use client"
-
-import { useEffect } from "react"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Experience from "@/components/experience"
 import Projects from "@/components/projects"
-import Testimonials from "@/components/testimonials"
 import Certifications from "@/components/certifications"
+import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import FloatingHireButton from "@/components/floating-hire-button"
 import ScrollProgress from "@/components/scroll-progress"
 import BackToTop from "@/components/back-to-top"
+import EnhancedParticles from "@/components/enhanced-particles"
+import EnhancedCursor from "@/components/enhanced-cursor"
+import LoadingAnimation from "@/components/loading-animation"
 
 export default function Home() {
-  useEffect(() => {
-    // Add smooth scrolling behavior
-    document.documentElement.style.scrollBehavior = "smooth"
-
-    // Cleanup
-    return () => {
-      document.documentElement.style.scrollBehavior = "auto"
-    }
-  }, [])
-
   return (
-    <main className="min-h-screen bg-background">
+    <main className="relative">
+      <LoadingAnimation />
+      <EnhancedParticles />
+      <EnhancedCursor />
       <ScrollProgress />
       <Navbar />
 
-      <div id="home">
-        <Hero />
-      </div>
-
+      <Hero />
       <About />
       <Experience />
       <Projects />
-      <Testimonials />
       <Certifications />
+      <Testimonials />
       <Contact />
 
       <Footer />
