@@ -2,52 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-
 @layer base {
   :root {
-    --background: 220 20% 99%;
-    --foreground: 220 15% 15%;
-    --card: 220 15% 98%;
-    --card-foreground: 220 15% 15%;
-    --popover: 220 15% 98%;
-    --popover-foreground: 220 15% 15%;
-    --primary: 220 50% 45%;
-    --primary-foreground: 220 20% 99%;
-    --secondary: 220 10% 95%;
-    --secondary-foreground: 220 15% 15%;
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 8% 45%;
-    --accent: 220 10% 95%;
-    --accent-foreground: 220 15% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 50% 45%;
-    --radius: 0.75rem;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 220 25% 8%;
-    --foreground: 220 20% 95%;
-    --card: 220 25% 10%;
-    --card-foreground: 220 20% 95%;
-    --popover: 220 25% 10%;
-    --popover-foreground: 220 20% 95%;
-    --primary: 220 50% 55%;
-    --primary-foreground: 220 25% 8%;
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 220 20% 95%;
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 20% 65%;
-    --accent: 220 15% 15%;
-    --accent-foreground: 220 20% 95%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 220 50% 55%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 76% 36%;
   }
 }
 
@@ -57,283 +72,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-    line-height: 1.6;
   }
 }
 
-@layer components {
-  .glass-morphism {
-    @apply bg-white/30 backdrop-blur-2xl border border-white/40 shadow-2xl;
-  }
-
-  .glass-midnight {
-    @apply bg-midnight-50/70 backdrop-blur-xl border border-midnight-200/60 shadow-xl;
-  }
-
-  .glass-coral {
-    @apply bg-coral-50/70 backdrop-blur-xl border border-coral-200/60 shadow-xl;
-  }
-
-  .glass-sage {
-    @apply bg-sage-50/70 backdrop-blur-xl border border-sage-200/60 shadow-xl;
-  }
-
-  .glass-golden {
-    @apply bg-golden-50/70 backdrop-blur-xl border border-golden-200/60 shadow-xl;
-  }
-
-  .section-padding {
-    @apply py-20 md:py-28 lg:py-36;
-  }
-
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .text-gradient-midnight {
-    @apply bg-gradient-to-r from-midnight-700 via-midnight-800 to-midnight-900 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-coral {
-    @apply bg-gradient-to-r from-coral-500 via-coral-600 to-coral-700 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-sage {
-    @apply bg-gradient-to-r from-sage-600 via-sage-700 to-sage-800 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-golden {
-    @apply bg-gradient-to-r from-golden-500 via-golden-600 to-golden-700 bg-clip-text text-transparent;
-  }
-
-  .card-hover {
-    @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02];
-  }
-
-  .btn-primary {
-    @apply bg-gradient-to-r from-midnight-700 to-midnight-800 hover:from-midnight-800 hover:to-midnight-900 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95;
-  }
-
-  .btn-secondary {
-    @apply bg-gradient-to-r from-coral-100 to-coral-200 hover:from-coral-200 hover:to-coral-300 text-coral-800 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 border border-coral-300/50 shadow-md hover:shadow-lg transform hover:-translate-y-1;
-  }
-
-  .btn-accent {
-    @apply bg-gradient-to-r from-sage-600 to-sage-700 hover:from-sage-700 hover:to-sage-800 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95;
-  }
-
-  .btn-golden {
-    @apply bg-gradient-to-r from-golden-500 to-golden-600 hover:from-golden-600 hover:to-golden-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95;
-  }
-
-  .section-bg-midnight {
-    @apply bg-gradient-to-br from-midnight-50/80 via-white to-pearl-50/60;
-  }
-
-  .section-bg-coral {
-    @apply bg-gradient-to-br from-coral-50/80 via-white to-pearl-50/60;
-  }
-
-  .section-bg-sage {
-    @apply bg-gradient-to-br from-sage-50/80 via-white to-pearl-50/60;
-  }
-
-  .section-bg-golden {
-    @apply bg-gradient-to-br from-golden-50/80 via-white to-pearl-50/60;
-  }
-
-  .hero-gradient {
-    @apply bg-gradient-to-br from-midnight-50 via-pearl-50/50 to-sage-50/30;
-  }
-
-  .pattern-dots {
-    background-image: radial-gradient(circle at 2px 2px, rgba(72, 101, 129, 0.15) 2px, transparent 0);
-    background-size: 24px 24px;
-  }
-
-  .pattern-grid {
-    background-image: linear-gradient(rgba(72, 101, 129, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(72, 101, 129, 0.1) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-
-  .pattern-mesh {
-    background-image: linear-gradient(45deg, rgba(72, 101, 129, 0.05) 25%, transparent 25%),
-      linear-gradient(-45deg, rgba(72, 101, 129, 0.05) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, rgba(72, 101, 129, 0.05) 75%),
-      linear-gradient(-45deg, transparent 75%, rgba(72, 101, 129, 0.05) 75%);
-    background-size: 48px 48px;
-    background-position: 0 0, 0 24px, 24px -24px, -24px 0px;
-  }
-
-  .shimmer-effect {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shimmer-effect::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    animation: shimmer 3s infinite;
-  }
-
-  .card-premium {
-    @apply glass-midnight rounded-3xl p-8 shadow-2xl border-2 border-midnight-200/40;
-    background: linear-gradient(135deg, rgba(240, 244, 248, 0.9) 0%, rgba(217, 226, 236, 0.7) 100%);
-  }
-
-  .card-interactive {
-    @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 hover:rotate-1;
-  }
-
-  .glow-midnight {
-    box-shadow: 0 0 30px rgba(72, 101, 129, 0.3);
-  }
-
-  .glow-coral {
-    box-shadow: 0 0 30px rgba(245, 101, 101, 0.3);
-  }
-
-  .glow-sage {
-    box-shadow: 0 0 30px rgba(107, 150, 136, 0.3);
-  }
-
-  .glow-golden {
-    box-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
-  }
-}
-
-/* Enhanced scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f0f4f8;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #627d98, #486581);
-  border-radius: 6px;
-  border: 2px solid #f0f4f8;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #486581, #334e68);
-}
-
-/* Enhanced focus styles */
-*:focus-visible {
-  @apply outline-none ring-2 ring-midnight-500 ring-offset-2 ring-offset-background;
-}
-
-/* Typography improvements */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold tracking-tight;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-}
-
-p {
-  @apply leading-relaxed;
-}
-
-/* Animation utilities */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.animate-on-scroll.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stagger-animation {
-  animation-delay: calc(var(--stagger) * 0.15s);
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .section-padding {
-    @apply py-16;
-  }
-
-  .container-custom {
-    @apply px-4;
-  }
-
-  .btn-primary,
-  .btn-secondary,
-  .btn-accent,
-  .btn-golden {
-    @apply px-6 py-3 text-sm;
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .text-gradient-midnight,
-  .text-gradient-coral,
-  .text-gradient-sage,
-  .text-gradient-golden {
-    @apply text-midnight-900;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .card-hover,
-  .card-interactive,
-  .animate-on-scroll,
-  .shimmer-effect::before {
-    animation: none;
-    transition: none;
-    transform: none;
-  }
-}
-
-/* Print styles */
-@media print {
-  .glass-morphism,
-  .glass-midnight,
-  .glass-coral,
-  .glass-sage,
-  .glass-golden {
-    @apply bg-white border border-gray-300;
-  }
-}
-
-/* Custom selection */
-::selection {
-  background-color: rgba(72, 101, 129, 0.2);
-  color: #334e68;
-}
-
-/* Loading states */
-.skeleton {
-  @apply bg-gradient-to-r from-pearl-200 via-pearl-300 to-pearl-200 animate-pulse;
-  background-size: 200% 100%;
-}
-
-/* Utility classes */
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
