@@ -1,0 +1,123 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { useTheme } from "next-themes"
+import { useMousePosition } from "@/hooks/use-mouse-position"
+
+export default function EnhancedCursor() {
+  const mousePosition = useMousePosition()
+  const [isHovering, setIsHovering] = useState(false)
+  const [isClicking, setIsClicking] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const [cursorText, setCursorText] = useState("")
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+
+    // Show cursor after a short delay to prevent initial animation from wrong position
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 1000)
+
+    const handleMouseDown = () => setIsClicking(true)
+    const handleMouseUp = () => setIsClicking(false)
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const isClickable =
+        target.tagName === "BUTTON" ||
+        target.tagName === "A" ||
+        target.closest("button") ||
+        target.closest("a") ||
+        target.classList.contains("card-hover") ||
+        target.classList.contains("interactive")
+
+      // Check for data attributes for custom cursor text
+      const cursorTextAttr =
+        target.getAttribute("data-cursor-text") ||
+        target.closest("[data-cursor-text]")?.getAttribute("data-cursor-text")
+
+      setCursorText(cursorTextAttr || "")
+      setIsHovering(isClickable)
+    }
+
+    window.addEventListener("mousemove", handleMouseOver)
+    window.addEventListener("mousedown", handleMouseDown)
+    window.addEventListener("mouseup", handleMouseUp)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener("mousemove", handleMouseOver)
+      window.removeEventListener("mousedown", handleMouseDown)
+      window.removeEventListener("mouseup", handleMouseUp)
+    }
+  }, []) // Empty dependency array since none of these functions depend on state or props
+
+  if (!mounted || !isVisible || !mousePosition.x) return null
+
+  const cursorVariants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      height: 32,
+      width: 32,
+      backgroundColor: "rgba(0, 0, 0, 0)",
+      border: theme === "dark" ? "2px solid rgba(91, 234, 175, 0.5)" : "2px solid rgba(31, 75, 44, 0.5)",
+      transition: {
+        type: "spring",
+        mass: 0.3,
+        stiffness: 800,
+        damping: 30,
+      },
+    },
+    hover: {
+      x: mousePosition.x - 30,
+      y: mousePosition.y - 30,
+      height: 60,
+      width: 60,
+      backgroundColor: theme === "dark" ? "rgba(91, 234, 175, 0.1)" : "rgba(31, 75, 44, 0.1)",
+      border: theme === "dark" ? "2px solid rgba(91, 234, 175, 0.8)" : "2px solid rgba(31, 75, 44, 0.8)",
+      mixBlendMode: "difference",
+    },
+    click: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      height: 24,
+      width: 24,
+      backgroundColor: theme === "dark" ? "rgba(91, 234, 175, 0.3)" : "rgba(31, 75, 44, 0.3)",
+      border: theme === "dark" ? "2px solid rgba(91, 234, 175, 1)" : "2px solid rgba(31, 75, 44, 1)",
+    },
+  }
+
+  return (
+    <>
+      <motion.div
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-50 hidden md:block"
+        variants={cursorVariants}
+        animate={isClicking ? "click" : isHovering ? "hover" : "default"}
+      />
+
+      {/* Text that appears near cursor when hovering over interactive elements with data-cursor-text */}
+      <AnimatePresence>
+        {cursorText && isHovering && (
+          <motion.div
+            className="fixed pointer-events-none z-50 text-sm font-medium bg-primary text-white px-2 py-1 rounded hidden md:block"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              x: mousePosition.x + 10,
+              y: mousePosition.y + 10,
+            }}
+            exit={{ opacity: 0, y: 10 }}
+          >
+            {cursorText}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}

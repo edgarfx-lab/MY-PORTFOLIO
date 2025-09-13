@@ -1,13 +1,19 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import { cn } from "@/lib/utils"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: "Kgope Edgar Mahlare | Front-End UI Developer",
+  description:
+    "Portfolio of Kgope Edgar Mahlare, a Front-End UI Developer specializing in responsive web design and user-centric interfaces.",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -16,19 +22,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
-}
-        `}</style>
-      </head>
-      <body>
-        {children}
-        <Analytics />
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className={cn(inter.className, "min-h-screen antialiased")}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <div className="relative flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
